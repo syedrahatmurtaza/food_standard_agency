@@ -1,0 +1,4008 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"Link": {
+				"properties": {
+					"rel": {
+						"type": "string"
+					},
+					"href": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"rel",
+					"href"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Authority": {
+				"properties": {
+					"localAuthorityId": {
+						"type": "number",
+						"format": "double"
+					},
+					"localAuthorityIdCode": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"friendlyName": {
+						"type": "string"
+					},
+					"url": {
+						"type": "string"
+					},
+					"schemeURL": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"regionName": {
+						"type": "string"
+					},
+					"fileName": {
+						"type": "string"
+					},
+					"fileNameWelsh": {
+						"type": "string"
+					},
+					"establishmentCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"creationDate": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"lastPublishedDate": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"schemeType": {
+						"type": "number",
+						"format": "double"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"localAuthorityId",
+					"localAuthorityIdCode",
+					"name",
+					"friendlyName",
+					"url",
+					"schemeURL",
+					"email",
+					"regionName",
+					"fileName",
+					"fileNameWelsh",
+					"establishmentCount",
+					"creationDate",
+					"lastPublishedDate",
+					"schemeType",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Meta": {
+				"properties": {
+					"publisher": {
+						"type": "string"
+					},
+					"licence": {
+						"type": "string"
+					},
+					"documentation": {
+						"type": "string"
+					},
+					"version": {
+						"type": "string"
+					},
+					"comment": {
+						"type": "string"
+					},
+					"hasFormat": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"limit": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"publisher",
+					"licence",
+					"documentation",
+					"version",
+					"comment",
+					"hasFormat",
+					"limit"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IAuthorityDetailPaginationGetResponse": {
+				"properties": {
+					"authorities": {
+						"items": {
+							"$ref": "#/components/schemas/Authority"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"authorities",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"AuthorityBasic": {
+				"properties": {
+					"localAuthorityId": {
+						"type": "number",
+						"format": "double"
+					},
+					"localAuthorityIdCode": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"establishmentCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"schemeType": {
+						"type": "number",
+						"format": "double"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"localAuthorityId",
+					"localAuthorityIdCode",
+					"name",
+					"establishmentCount",
+					"schemeType",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IAuthorityDetailBasicPaginationGetResponse": {
+				"properties": {
+					"authorities": {
+						"items": {
+							"$ref": "#/components/schemas/AuthorityBasic"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"authorities",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IAuthorityDetailBasicGetResponse": {
+				"properties": {
+					"authorities": {
+						"items": {
+							"$ref": "#/components/schemas/AuthorityBasic"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"authorities",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"AuthorityDetail": {
+				"properties": {
+					"localAuthorityId": {
+						"type": "number",
+						"format": "double"
+					},
+					"localAuthorityIdCode": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"friendlyName": {
+						"type": "string"
+					},
+					"url": {
+						"type": "string"
+					},
+					"schemeURL": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"regionName": {
+						"type": "string"
+					},
+					"fileName": {
+						"type": "string"
+					},
+					"fileNameWelsh": {
+						"type": "string"
+					},
+					"establishmentCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"creationDate": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"lastPublishedDate": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"schemeType": {
+						"type": "number",
+						"format": "double"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"localAuthorityId",
+					"localAuthorityIdCode",
+					"name",
+					"friendlyName",
+					"url",
+					"schemeURL",
+					"email",
+					"regionName",
+					"fileName",
+					"fileNameWelsh",
+					"establishmentCount",
+					"creationDate",
+					"lastPublishedDate",
+					"schemeType",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IAuthorityDetailGetResponse": {
+				"properties": {
+					"authorities": {
+						"items": {
+							"$ref": "#/components/schemas/AuthorityDetail"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"authorities",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IAuthorityDetailByIDGetResponse": {
+				"properties": {
+					"localAuthorityId": {
+						"type": "number",
+						"format": "double"
+					},
+					"localAuthorityIdCode": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"friendlyName": {
+						"type": "string"
+					},
+					"url": {
+						"type": "string"
+					},
+					"schemeURL": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"regionName": {
+						"type": "string"
+					},
+					"fileName": {
+						"type": "string"
+					},
+					"fileNameWelsh": {
+						"type": "string"
+					},
+					"establishmentCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"creationDate": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"lastPublishedDate": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"schemeType": {
+						"type": "number",
+						"format": "double"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"localAuthorityId",
+					"localAuthorityIdCode",
+					"name",
+					"friendlyName",
+					"url",
+					"schemeURL",
+					"email",
+					"regionName",
+					"fileName",
+					"fileNameWelsh",
+					"establishmentCount",
+					"creationDate",
+					"lastPublishedDate",
+					"schemeType",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"BusinessType": {
+				"properties": {
+					"businessTypeID": {
+						"type": "number",
+						"format": "double"
+					},
+					"businessTypeName": {
+						"type": "string"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"businessTypeID",
+					"businessTypeName",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IBusinessTypesDetailPaginationGetResponse": {
+				"properties": {
+					"businessTypes": {
+						"items": {
+							"$ref": "#/components/schemas/BusinessType"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"businessTypes",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IBusinessTypesDetailBasicPaginationGetResponse": {
+				"properties": {
+					"businessTypes": {
+						"items": {
+							"$ref": "#/components/schemas/BusinessType"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"businessTypes",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IBusinessTypesDetailBasicGetResponse": {
+				"properties": {
+					"businessTypes": {
+						"items": {
+							"$ref": "#/components/schemas/BusinessType"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"businessTypes",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IBusinessTypesDetailGetResponse": {
+				"properties": {
+					"businessTypes": {
+						"items": {
+							"$ref": "#/components/schemas/BusinessType"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"businessTypes",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IBusinessTypesDetailByIdGetResponse": {
+				"properties": {
+					"businessTypeID": {
+						"type": "number",
+						"format": "double"
+					},
+					"businessTypeName": {
+						"type": "string"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"businessTypeID",
+					"businessTypeName",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Country": {
+				"properties": {
+					"id": {
+						"type": "number",
+						"format": "double"
+					},
+					"name": {
+						"type": "string"
+					},
+					"nameKey": {
+						"type": "string"
+					},
+					"code": {
+						"type": "string"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"id",
+					"name",
+					"nameKey",
+					"code",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ICountryDetailPaginationGetResponse": {
+				"properties": {
+					"countries": {
+						"items": {
+							"$ref": "#/components/schemas/Country"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"countries",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ICountryDetailBasicPaginationGetResponse": {
+				"properties": {
+					"countries": {
+						"items": {
+							"$ref": "#/components/schemas/Country"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"countries",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ICountryDetailBasicGetResponse": {
+				"properties": {
+					"countries": {
+						"items": {
+							"$ref": "#/components/schemas/Country"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"countries",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ICountryDetailGetResponse": {
+				"properties": {
+					"countries": {
+						"items": {
+							"$ref": "#/components/schemas/Country"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"countries",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ICountryDetailByIdGetResponse": {
+				"properties": {
+					"id": {
+						"type": "number",
+						"format": "double"
+					},
+					"name": {
+						"type": "string"
+					},
+					"nameKey": {
+						"type": "string"
+					},
+					"code": {
+						"type": "string"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"id",
+					"name",
+					"nameKey",
+					"code",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Establishment": {
+				"properties": {
+					"fhrsid": {
+						"type": "number",
+						"format": "double"
+					},
+					"localAuthorityBusinessId": {
+						"type": "string"
+					},
+					"businessName": {
+						"type": "string"
+					},
+					"businessType": {
+						"type": "string"
+					},
+					"ratingValue": {
+						"type": "string"
+					},
+					"ratingDate": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"fhrsid",
+					"localAuthorityBusinessId",
+					"businessName",
+					"businessType",
+					"ratingValue",
+					"ratingDate",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IEstablishmentsDetailPaginationGetResponse": {
+				"properties": {
+					"establishments": {
+						"items": {
+							"$ref": "#/components/schemas/Establishment"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"establishments",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IEstablishmentsDetailBasicGetResponse": {
+				"properties": {
+					"establishments": {
+						"items": {
+							"$ref": "#/components/schemas/Establishment"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"establishments",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Scores": {
+				"properties": {
+					"hygiene": {
+						"type": "number",
+						"format": "double"
+					},
+					"structural": {
+						"type": "number",
+						"format": "double"
+					},
+					"confidenceInManagement": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"hygiene",
+					"structural",
+					"confidenceInManagement"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Geocode": {
+				"properties": {
+					"longitude": {
+						"type": "string"
+					},
+					"latitude": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"longitude",
+					"latitude"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"EstablishmentListDetail": {
+				"properties": {
+					"fhrsid": {
+						"type": "number",
+						"format": "double"
+					},
+					"changesByServerID": {
+						"type": "number",
+						"format": "double"
+					},
+					"localAuthorityBusinessID": {
+						"type": "string"
+					},
+					"businessName": {
+						"type": "string"
+					},
+					"businessType": {
+						"type": "string"
+					},
+					"businessTypeID": {
+						"type": "number",
+						"format": "double"
+					},
+					"addressLine1": {
+						"type": "string"
+					},
+					"addressLine2": {
+						"type": "string"
+					},
+					"addressLine3": {
+						"type": "string"
+					},
+					"addressLine4": {
+						"type": "string"
+					},
+					"postCode": {
+						"type": "string"
+					},
+					"phone": {
+						"type": "string"
+					},
+					"ratingValue": {
+						"type": "string"
+					},
+					"ratingKey": {
+						"type": "string"
+					},
+					"ratingDate": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"localAuthorityCode": {
+						"type": "string"
+					},
+					"localAuthorityName": {
+						"type": "string"
+					},
+					"localAuthorityWebSite": {
+						"type": "string"
+					},
+					"localAuthorityEmailAddress": {
+						"type": "string"
+					},
+					"scores": {
+						"$ref": "#/components/schemas/Scores"
+					},
+					"schemeType": {
+						"type": "string"
+					},
+					"geocode": {
+						"$ref": "#/components/schemas/Geocode"
+					},
+					"rightToReply": {
+						"type": "string"
+					},
+					"distance": {
+						"type": "number",
+						"format": "double"
+					},
+					"newRatingPending": {
+						"type": "boolean"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"fhrsid",
+					"changesByServerID",
+					"localAuthorityBusinessID",
+					"businessName",
+					"businessType",
+					"businessTypeID",
+					"addressLine1",
+					"addressLine2",
+					"addressLine3",
+					"addressLine4",
+					"postCode",
+					"phone",
+					"ratingValue",
+					"ratingKey",
+					"ratingDate",
+					"localAuthorityCode",
+					"localAuthorityName",
+					"localAuthorityWebSite",
+					"localAuthorityEmailAddress",
+					"scores",
+					"schemeType",
+					"geocode",
+					"rightToReply",
+					"distance",
+					"newRatingPending",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IEstablishmentsListGetResponse": {
+				"properties": {
+					"establishments": {
+						"items": {
+							"$ref": "#/components/schemas/EstablishmentListDetail"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"establishments",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IEstablishmentsByIdGetResponse": {
+				"properties": {
+					"fhrsid": {
+						"type": "number",
+						"format": "double"
+					},
+					"changesByServerID": {
+						"type": "number",
+						"format": "double"
+					},
+					"localAuthorityBusinessID": {
+						"type": "string"
+					},
+					"businessName": {
+						"type": "string"
+					},
+					"businessType": {
+						"type": "string"
+					},
+					"businessTypeID": {
+						"type": "number",
+						"format": "double"
+					},
+					"addressLine1": {
+						"type": "string"
+					},
+					"addressLine2": {
+						"type": "string"
+					},
+					"addressLine3": {
+						"type": "string"
+					},
+					"addressLine4": {
+						"type": "string"
+					},
+					"postCode": {
+						"type": "string"
+					},
+					"phone": {
+						"type": "string"
+					},
+					"ratingValue": {
+						"type": "string"
+					},
+					"ratingKey": {
+						"type": "string"
+					},
+					"ratingDate": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"localAuthorityCode": {
+						"type": "string"
+					},
+					"localAuthorityName": {
+						"type": "string"
+					},
+					"localAuthorityWebSite": {
+						"type": "string"
+					},
+					"localAuthorityEmailAddress": {
+						"type": "string"
+					},
+					"scores": {
+						"$ref": "#/components/schemas/Scores"
+					},
+					"schemeType": {
+						"type": "string"
+					},
+					"geocode": {
+						"$ref": "#/components/schemas/Geocode"
+					},
+					"rightToReply": {
+						"type": "string"
+					},
+					"distance": {
+						"type": "number",
+						"format": "double"
+					},
+					"newRatingPending": {
+						"type": "boolean"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"fhrsid",
+					"changesByServerID",
+					"localAuthorityBusinessID",
+					"businessName",
+					"businessType",
+					"businessTypeID",
+					"addressLine1",
+					"addressLine2",
+					"addressLine3",
+					"addressLine4",
+					"postCode",
+					"phone",
+					"ratingValue",
+					"ratingKey",
+					"ratingDate",
+					"localAuthorityCode",
+					"localAuthorityName",
+					"localAuthorityWebSite",
+					"localAuthorityEmailAddress",
+					"scores",
+					"schemeType",
+					"geocode",
+					"rightToReply",
+					"distance",
+					"newRatingPending",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IEstablishmentsDetailGetResponse": {
+				"properties": {
+					"establishments": {
+						"items": {
+							"$ref": "#/components/schemas/EstablishmentListDetail"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"establishments",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"_SCHEME_TYPE_KEYS": {
+				"enum": [
+					"FHRS",
+					"FHIS"
+				],
+				"type": "string"
+			},
+			"_RATING_OPERATOR_KEYS": {
+				"enum": [
+					"Equal",
+					"LessThanOrEqual",
+					"GreaterThanOrEqual"
+				],
+				"type": "string"
+			},
+			"_SORT_OPTIONS_KEYS": {
+				"enum": [
+					"rating",
+					"desc_rating",
+					"alpha",
+					"desc_alpha",
+					"distance"
+				],
+				"type": "string"
+			},
+			"_RATING_FHRS_KEYS": {
+				"enum": [
+					"0",
+					"1",
+					"2",
+					"3",
+					"4",
+					"5"
+				],
+				"type": "string"
+			},
+			"_RATING_FHIS_KEYS": {
+				"enum": [
+					"PASS",
+					"ImprovementRequired",
+					"AwaitingPublication",
+					"AwatingInspection",
+					"Exempt"
+				],
+				"type": "string"
+			},
+			"Allergen": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"altLabel": {
+						"type": "string"
+					},
+					"label": {
+						"type": "string"
+					},
+					"narrower": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"notation": {
+						"type": "string"
+					},
+					"riskStatement": {
+						"type": "string"
+					},
+					"broader": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"label",
+					"notation",
+					"riskStatement"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Problem": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"allergen": {
+						"items": {
+							"$ref": "#/components/schemas/Allergen"
+						},
+						"type": "array"
+					},
+					"riskStatement": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"riskStatement"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"BatchDescription": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"batchCode": {
+						"type": "string"
+					},
+					"bestBeforeDate": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"bestBeforeDescription": {
+						"type": "string"
+					},
+					"useByDescription": {
+						"type": "string"
+					},
+					"lotNumber": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ProductDetail": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"batchDescription": {
+						"items": {
+							"$ref": "#/components/schemas/BatchDescription"
+						},
+						"type": "array"
+					},
+					"packSizeDescription": {
+						"type": "string"
+					},
+					"productName": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"batchDescription",
+					"productName"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Business": {
+				"properties": {
+					"commonName": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"commonName"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Label": {
+				"enum": [
+					"Published"
+				],
+				"type": "string"
+			},
+			"Status": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"label": {
+						"$ref": "#/components/schemas/Label"
+					}
+				},
+				"required": [
+					"id",
+					"label"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ItemFull": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"smStext": {
+						"type": "string"
+					},
+					"actionTaken": {
+						"type": "string"
+					},
+					"alertURL": {
+						"type": "string"
+					},
+					"consumerAdvice": {
+						"type": "string"
+					},
+					"created": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"description": {
+						"type": "string"
+					},
+					"modified": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"notation": {
+						"type": "string"
+					},
+					"problem": {
+						"items": {
+							"$ref": "#/components/schemas/Problem"
+						},
+						"type": "array"
+					},
+					"productDetails": {
+						"items": {
+							"$ref": "#/components/schemas/ProductDetail"
+						},
+						"type": "array"
+					},
+					"relatedMedia": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"reportingBusiness": {
+						"$ref": "#/components/schemas/Business"
+					},
+					"shortTitle": {
+						"type": "string"
+					},
+					"shortURL": {
+						"type": "string"
+					},
+					"status": {
+						"$ref": "#/components/schemas/Status"
+					},
+					"title": {
+						"type": "string"
+					},
+					"twitterText": {
+						"type": "string"
+					},
+					"type": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"otherBusiness": {
+						"anyOf": [
+							{
+								"items": {
+									"$ref": "#/components/schemas/Business"
+								},
+								"type": "array"
+							},
+							{
+								"$ref": "#/components/schemas/Business"
+							}
+						]
+					}
+				},
+				"required": [
+					"id",
+					"smStext",
+					"actionTaken",
+					"alertURL",
+					"consumerAdvice",
+					"created",
+					"description",
+					"modified",
+					"notation",
+					"problem",
+					"productDetails",
+					"reportingBusiness",
+					"shortTitle",
+					"shortURL",
+					"status",
+					"title",
+					"twitterText",
+					"type"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IListAlertGetFullResponse": {
+				"properties": {
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"items": {
+						"items": {
+							"$ref": "#/components/schemas/ItemFull"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"meta",
+					"items"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ReportingBusiness": {
+				"properties": {
+					"commonName": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"commonName"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ItemDefault": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"alertURL": {
+						"type": "string"
+					},
+					"created": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"modified": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"notation": {
+						"type": "string"
+					},
+					"problem": {
+						"items": {
+							"$ref": "#/components/schemas/Problem"
+						},
+						"type": "array"
+					},
+					"productDetails": {
+						"items": {
+							"$ref": "#/components/schemas/ProductDetail"
+						},
+						"type": "array"
+					},
+					"reportingBusiness": {
+						"$ref": "#/components/schemas/ReportingBusiness"
+					},
+					"shortTitle": {
+						"type": "string"
+					},
+					"status": {
+						"$ref": "#/components/schemas/Status"
+					},
+					"title": {
+						"type": "string"
+					},
+					"type": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"id",
+					"alertURL",
+					"created",
+					"modified",
+					"notation",
+					"problem",
+					"productDetails",
+					"reportingBusiness",
+					"shortTitle",
+					"status",
+					"title",
+					"type"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IListAlertGetDefaultResponse": {
+				"properties": {
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"items": {
+						"items": {
+							"$ref": "#/components/schemas/ItemDefault"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"meta",
+					"items"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"_VIEW": {
+				"description": "*************************      Enum Constants      ****************************************",
+				"enum": [
+					"default",
+					"full"
+				],
+				"type": "string"
+			},
+			"AlertURL": {
+				"properties": {
+					"id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"RelatedMedia": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"title": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"title"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ItemIndividual": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"smStext": {
+						"type": "string"
+					},
+					"actionTaken": {
+						"type": "string"
+					},
+					"alertURL": {
+						"$ref": "#/components/schemas/AlertURL"
+					},
+					"consumerAdvice": {
+						"type": "string"
+					},
+					"created": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"description": {
+						"type": "string"
+					},
+					"modified": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"notation": {
+						"type": "string"
+					},
+					"problem": {
+						"items": {
+							"$ref": "#/components/schemas/Problem"
+						},
+						"type": "array"
+					},
+					"productDetails": {
+						"items": {
+							"$ref": "#/components/schemas/ProductDetail"
+						},
+						"type": "array"
+					},
+					"relatedMedia": {
+						"items": {
+							"$ref": "#/components/schemas/RelatedMedia"
+						},
+						"type": "array"
+					},
+					"reportingBusiness": {
+						"$ref": "#/components/schemas/ReportingBusiness"
+					},
+					"shortTitle": {
+						"type": "string"
+					},
+					"shortURL": {
+						"$ref": "#/components/schemas/AlertURL"
+					},
+					"status": {
+						"$ref": "#/components/schemas/Status"
+					},
+					"title": {
+						"type": "string"
+					},
+					"twitterText": {
+						"type": "string"
+					},
+					"type": {
+						"items": {
+							"$ref": "#/components/schemas/AlertURL"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"id",
+					"smStext",
+					"actionTaken",
+					"alertURL",
+					"consumerAdvice",
+					"created",
+					"description",
+					"modified",
+					"notation",
+					"problem",
+					"productDetails",
+					"relatedMedia",
+					"reportingBusiness",
+					"shortTitle",
+					"shortURL",
+					"status",
+					"title",
+					"twitterText",
+					"type"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IFoodAlertIndividualAlertGetResponse": {
+				"properties": {
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"items": {
+						"items": {
+							"$ref": "#/components/schemas/ItemIndividual"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"meta",
+					"items"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ItemAllergen": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"broader": {
+						"type": "string"
+					},
+					"label": {
+						"type": "string"
+					},
+					"notation": {
+						"type": "string"
+					},
+					"riskStatement": {
+						"type": "string"
+					},
+					"altLabel": {
+						"type": "string"
+					},
+					"narrower": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"id",
+					"label",
+					"notation",
+					"riskStatement"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IFoodAlertListCodeAllergensGetResponse": {
+				"properties": {
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"items": {
+						"items": {
+							"$ref": "#/components/schemas/ItemAllergen"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"meta",
+					"items"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Pathogen": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"label": {
+						"anyOf": [
+							{
+								"items": {
+									"type": "string"
+								},
+								"type": "array"
+							},
+							{
+								"type": "string"
+							}
+						]
+					},
+					"notation": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"label",
+					"notation"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ItemPathogen": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"label": {
+						"anyOf": [
+							{
+								"items": {
+									"type": "string"
+								},
+								"type": "array"
+							},
+							{
+								"type": "string"
+							}
+						]
+					},
+					"notation": {
+						"type": "string"
+					},
+					"pathogen": {
+						"$ref": "#/components/schemas/Pathogen"
+					},
+					"riskStatement": {
+						"anyOf": [
+							{
+								"items": {
+									"type": "string"
+								},
+								"type": "array"
+							},
+							{
+								"type": "string"
+							}
+						]
+					}
+				},
+				"required": [
+					"id",
+					"label",
+					"notation",
+					"pathogen",
+					"riskStatement"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IFoodAlertPathogenRiskGetResponse": {
+				"properties": {
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"items": {
+						"items": {
+							"$ref": "#/components/schemas/ItemPathogen"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"meta",
+					"items"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ItemHazardCatagories": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"label": {
+						"type": "string"
+					},
+					"notation": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"label",
+					"notation"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IFoodAlertHazardCatagoryGetResponse": {
+				"properties": {
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"items": {
+						"items": {
+							"$ref": "#/components/schemas/ItemHazardCatagories"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"meta",
+					"items"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IFoodAlertReasonAlertGetResponse": {
+				"properties": {
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"items": {
+						"items": {
+							"$ref": "#/components/schemas/ItemHazardCatagories"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"meta",
+					"items"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Rating": {
+				"properties": {
+					"ratingID": {
+						"type": "number",
+						"format": "double"
+					},
+					"ratingName": {
+						"type": "string"
+					},
+					"ratingKey": {
+						"type": "string"
+					},
+					"ratingKeyName": {
+						"type": "string"
+					},
+					"schemeTypeID": {
+						"type": "number",
+						"format": "double"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"ratingID",
+					"ratingName",
+					"ratingKey",
+					"ratingKeyName",
+					"schemeTypeID",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IRatingGetResponse": {
+				"properties": {
+					"ratings": {
+						"items": {
+							"$ref": "#/components/schemas/Rating"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"ratings",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"RatingOperator": {
+				"properties": {
+					"ratingOperatorID": {
+						"type": "number",
+						"format": "double"
+					},
+					"ratingOperatorName": {
+						"type": "string"
+					},
+					"ratingOperatorKey": {
+						"type": "string"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"ratingOperatorID",
+					"ratingOperatorName",
+					"ratingOperatorKey",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IRatingOperatorGetResponse": {
+				"properties": {
+					"ratingOperator": {
+						"items": {
+							"$ref": "#/components/schemas/RatingOperator"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"ratingOperator",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Region": {
+				"properties": {
+					"id": {
+						"type": "number",
+						"format": "double"
+					},
+					"name": {
+						"type": "string"
+					},
+					"nameKey": {
+						"type": "string"
+					},
+					"code": {
+						"type": "string"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"id",
+					"name",
+					"nameKey",
+					"code",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"MetaRegion": {
+				"properties": {
+					"dataSource": {
+						"type": "string"
+					},
+					"extractDate": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"itemCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"returncode": {
+						"type": "string"
+					},
+					"totalCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"totalPages": {
+						"type": "number",
+						"format": "double"
+					},
+					"pageSize": {
+						"type": "number",
+						"format": "double"
+					},
+					"pageNumber": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"dataSource",
+					"extractDate",
+					"itemCount",
+					"returncode",
+					"totalCount",
+					"totalPages",
+					"pageSize",
+					"pageNumber"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IRegionDetailPaginationGetResponse": {
+				"properties": {
+					"regions": {
+						"items": {
+							"$ref": "#/components/schemas/Region"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/MetaRegion"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"regions",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IRegionDetailBasicPaginationGetResponse": {
+				"properties": {
+					"regions": {
+						"items": {
+							"$ref": "#/components/schemas/Region"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/MetaRegion"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"regions",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IRegionDetailBasicGetResponse": {
+				"properties": {
+					"regions": {
+						"items": {
+							"$ref": "#/components/schemas/Region"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/MetaRegion"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"regions",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IRegionDetailGetResponse": {
+				"properties": {
+					"regions": {
+						"items": {
+							"$ref": "#/components/schemas/Region"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/MetaRegion"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"regions",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IRegionDetailByIdGetResponse": {
+				"properties": {
+					"id": {
+						"type": "number",
+						"format": "double"
+					},
+					"name": {
+						"type": "string"
+					},
+					"nameKey": {
+						"type": "string"
+					},
+					"code": {
+						"type": "string"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"id",
+					"name",
+					"nameKey",
+					"code",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"SchemeType": {
+				"properties": {
+					"schemeTypeid": {
+						"type": "number",
+						"format": "double"
+					},
+					"schemeTypeName": {
+						"type": "string"
+					},
+					"schemeTypeKey": {
+						"type": "string"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"schemeTypeid",
+					"schemeTypeName",
+					"schemeTypeKey",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ISchemeTypesGetResponse": {
+				"properties": {
+					"schemeTypes": {
+						"items": {
+							"$ref": "#/components/schemas/SchemeType"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"schemeTypes",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ScoreDescriptor": {
+				"properties": {
+					"id": {
+						"type": "number",
+						"format": "double"
+					},
+					"scoreCategory": {
+						"type": "string"
+					},
+					"score": {
+						"type": "number",
+						"format": "double"
+					},
+					"description": {
+						"type": "string"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"id",
+					"scoreCategory",
+					"score",
+					"description",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IScoreDescriptorGetResponse": {
+				"properties": {
+					"scoreDescriptors": {
+						"items": {
+							"$ref": "#/components/schemas/ScoreDescriptor"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"scoreDescriptors",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"SortOption": {
+				"properties": {
+					"sortOptionID": {
+						"type": "number",
+						"format": "double"
+					},
+					"sortOptionName": {
+						"type": "string"
+					},
+					"sortOptionKey": {
+						"type": "string"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"sortOptionID",
+					"sortOptionName",
+					"sortOptionKey",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ISortOptionsGetResponse": {
+				"properties": {
+					"sortOptions": {
+						"items": {
+							"$ref": "#/components/schemas/SortOption"
+						},
+						"type": "array"
+					},
+					"meta": {
+						"$ref": "#/components/schemas/Meta"
+					},
+					"links": {
+						"items": {
+							"$ref": "#/components/schemas/Link"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"sortOptions",
+					"meta",
+					"links"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {
+			"bearerAuth": {
+				"type": "http",
+				"scheme": "bearer",
+				"name": "authorization",
+				"in": "header",
+				"bearerFormat": "JWT"
+			},
+			"apiKeyAuth": {
+				"type": "apiKey",
+				"in": "header",
+				"name": "X-API-KEY"
+			}
+		}
+	},
+	"info": {
+		"title": "Food Standards Agency API",
+		"version": "v1",
+		"description": "The FSA Food Alerts API provides access to current and recent Food Alerts: Allergy Alerts (AA), Product Recall Information Notices (PRIN) and Food Alerts for Action (FAFA). It provides applications with the facility to list alerts matching some filter criterion, and to retrieve a description of an alert.",
+		"contact": {
+			"name": "Oraclo LTD",
+			"email": "admin@orcalo.co.uk",
+			"url": "https://orcalo.co.uk/"
+		}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/v1/authorities/{pageNumber}/{pageSize}": {
+			"get": {
+				"operationId": "GetAuthorityDetailPagination",
+				"responses": {
+					"200": {
+						"description": "IAuthorityDetailPaginationGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IAuthorityDetailPaginationGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns details of all authorities, page parameters allow for page number and size specification.",
+				"tags": [
+					"Authorities"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Must be Greater Than <b>0</b>",
+						"in": "path",
+						"name": "pageNumber",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "Must be Greater Than <b>0</b>",
+						"in": "path",
+						"name": "pageSize",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/v1/authorities/basic/{pageNumber}/{pageSize}": {
+			"get": {
+				"operationId": "GetRegionDetailBasicPagination",
+				"responses": {
+					"200": {
+						"description": "IAuthorityDetailBasicPaginationGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IAuthorityDetailBasicPaginationGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns a basic list of authorities (id/name), details can be retrieved by calling authorities/{id}, page parameters allow for page number and size specification.",
+				"tags": [
+					"Authorities"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Must be greater than <b>0</b>",
+						"in": "path",
+						"name": "pageNumber",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "Must be greater than <b>0</b>",
+						"in": "path",
+						"name": "pageSize",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/v1/authorities/basic": {
+			"get": {
+				"operationId": "GetAuthorityDetailBasic",
+				"responses": {
+					"200": {
+						"description": "IAuthorityDetailBasicGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IAuthorityDetailBasicGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns a basic list of authorities (id/name), details can be retrieved by calling authorities/{id}, results are unbound.",
+				"tags": [
+					"Authorities"
+				],
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/v1/authorities": {
+			"get": {
+				"operationId": "GetAuthorityDetail",
+				"responses": {
+					"200": {
+						"description": "IAuthorityDetailGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IAuthorityDetailGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns details of all authorities, results are unbound.",
+				"tags": [
+					"Authorities"
+				],
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/v1/authorities/{id}": {
+			"get": {
+				"operationId": "GetAuthorityDetailById",
+				"responses": {
+					"200": {
+						"description": "IAuthorityDetailByIDGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IAuthorityDetailByIDGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns details of a single authority, selected by Id.",
+				"tags": [
+					"Authorities"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			}
+		},
+		"/v1/businesstypes/{pageNumber}/{pageSize}": {
+			"get": {
+				"operationId": "GetBusinessTypesDetailPagination",
+				"responses": {
+					"200": {
+						"description": "IBusinessTypesDetailPaginationGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IBusinessTypesDetailPaginationGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns details of all business types, page parameters allow for page number and size specification.",
+				"tags": [
+					"BusinessTypes"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Must be Greater Than <b>0</b>",
+						"in": "path",
+						"name": "pageNumber",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "Must be Greater Than <b>0</b>",
+						"in": "path",
+						"name": "pageSize",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/v1/businesstypes/basic/{pageNumber}/{pageSize}": {
+			"get": {
+				"operationId": "GetBusinessTypesDetailBasicPagination",
+				"responses": {
+					"200": {
+						"description": "IBusinessTypesDetailBasicPaginationGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IBusinessTypesDetailBasicPaginationGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns a basic list of business types, details can be retrieved by calling countries/{id}, page parameters allow for page number and size specification.",
+				"tags": [
+					"BusinessTypes"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Must be greater than <b>0</b>",
+						"in": "path",
+						"name": "pageNumber",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "Must be greater than <b>0</b>",
+						"in": "path",
+						"name": "pageSize",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/v1/businesstypes/basic": {
+			"get": {
+				"operationId": "GetBusinessTypesDetailBasic",
+				"responses": {
+					"200": {
+						"description": "IBusinessTypesDetailBasicGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IBusinessTypesDetailBasicGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns a basic list of business types, results are unbound.",
+				"tags": [
+					"BusinessTypes"
+				],
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/v1/businesstypes": {
+			"get": {
+				"operationId": "GetBusinessTypesDetail",
+				"responses": {
+					"200": {
+						"description": "IBusinessTypesDetailGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IBusinessTypesDetailGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns details of all business types, results are unbound.",
+				"tags": [
+					"BusinessTypes"
+				],
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/v1/businesstypes/{id}": {
+			"get": {
+				"operationId": "GetBusinessTypesDetailById",
+				"responses": {
+					"200": {
+						"description": "IBusinessTypesDetailByIdGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IBusinessTypesDetailByIdGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns details of a single business type, selected by Id.",
+				"tags": [
+					"BusinessTypes"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			}
+		},
+		"/v1/countries/{pageNumber}/{pageSize}": {
+			"get": {
+				"operationId": "GetCountryDetailPagination",
+				"responses": {
+					"200": {
+						"description": "ICountryDetailPaginationGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ICountryDetailPaginationGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns details of all countries, page parameters allow for page number and size specification.",
+				"tags": [
+					"Countries"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Must be greater than <b>0</b>",
+						"in": "path",
+						"name": "pageNumber",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "Must be greater than <b>0</b>",
+						"in": "path",
+						"name": "pageSize",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/v1/countries/basic/{pageNumber}/{pageSize}": {
+			"get": {
+				"operationId": "GetCountryDetailBasicPagination",
+				"responses": {
+					"200": {
+						"description": "ICountryDetailBasicPaginationGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ICountryDetailBasicPaginationGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns a basic list of countries, details can be retrieved by calling countries/{id}, page parameters allow for page number and size specification.",
+				"tags": [
+					"Countries"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Must be greater than <b>0</b>",
+						"in": "path",
+						"name": "pageNumber",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "Must be greater than <b>0</b>",
+						"in": "path",
+						"name": "pageSize",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/v1/countries/basic": {
+			"get": {
+				"operationId": "GetCountryDetailBasic",
+				"responses": {
+					"200": {
+						"description": "ICountryDetailBasicGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ICountryDetailBasicGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns a basic list of countries, results are unbound.",
+				"tags": [
+					"Countries"
+				],
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/v1/countries": {
+			"get": {
+				"operationId": "GetCountryDetail",
+				"responses": {
+					"200": {
+						"description": "ICountryDetailGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ICountryDetailGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns details of all countries, results are unbound.",
+				"tags": [
+					"Countries"
+				],
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/v1/countries/{id}": {
+			"get": {
+				"operationId": "GetCountryDetailById",
+				"responses": {
+					"200": {
+						"description": "ICountryDetailByIdGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ICountryDetailByIdGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns details of a single country, selected by Id.",
+				"tags": [
+					"Countries"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Must be greater than <b>0</b>",
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			}
+		},
+		"/v1/establishments/{pageNumber}/{pageSize}": {
+			"get": {
+				"operationId": "GetEstablishmentsDetailPagination",
+				"responses": {
+					"200": {
+						"description": "IEstablishmentsDetailPaginationGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IEstablishmentsDetailPaginationGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns a basic list of establishments (id/name), details can be retrieved by calling establishments/{id}, page parameters allow for page number and size specification.",
+				"tags": [
+					"Establishments"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Must be greater than <b>0</b>",
+						"in": "path",
+						"name": "pageNumber",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "Must be greater than <b>0</b>",
+						"in": "path",
+						"name": "pageSize",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/v1/establishments/basic": {
+			"get": {
+				"operationId": "GetEstablishmentsDetailBasic",
+				"responses": {
+					"200": {
+						"description": "IEstablishmentsDetailBasicGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IEstablishmentsDetailBasicGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns a basic list of establishments, details can be retrieved by calling establishments/{id}.",
+				"tags": [
+					"Establishments"
+				],
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/v1/establishments/list/{id}": {
+			"get": {
+				"operationId": "GetEstablishmentsListDetail",
+				"responses": {
+					"200": {
+						"description": "IEstablishmentsListGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IEstablishmentsListGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns a list of establishments, selected by Id.",
+				"tags": [
+					"Establishments"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Must be greater than <b>0</b>",
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			}
+		},
+		"/v1/establishments/{id}": {
+			"get": {
+				"operationId": "GetEstablishmentsDetailById",
+				"responses": {
+					"200": {
+						"description": "IEstablishmentsByIdGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IEstablishmentsByIdGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns a details of a single establishment, selected by Id.",
+				"tags": [
+					"Establishments"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Must be greater than <b>0</b>",
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			}
+		},
+		"/v1/establishments": {
+			"get": {
+				"operationId": "GetEstablishmentsDetail",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IEstablishmentsDetailGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns a collection of establishment details, based on provided search parameters. All search parameters are optional.",
+				"tags": [
+					"Establishments"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Filter the results based on the Scheme Type (FHRS or FHIS) of the establishment (See SchemeTypes for more details). Valid options are <b>'FHRS'</b> and </b>'FHIS'.",
+						"in": "query",
+						"name": "schemeTypeKey",
+						"required": true,
+						"schema": {
+							"$ref": "#/components/schemas/_SCHEME_TYPE_KEYS"
+						}
+					},
+					{
+						"description": "Operator for increasing the flexibility of the rating search. Valid options are <b>'LessThanOrEqual', 'GreaterThanOrEqual' and 'Equal'</b>, the default for this value is 'Equal' (See RatingOperators for more details). Note: These operators only function on FHRS Ratings.",
+						"in": "query",
+						"name": "ratingOperatorKey",
+						"required": true,
+						"schema": {
+							"$ref": "#/components/schemas/_RATING_OPERATOR_KEYS"
+						}
+					},
+					{
+						"description": "Set the options for sort field and direction of the results (See SortOptions for more details). Valid options are <b>'Relevance', 'rating', 'desc_rating', 'alpha', 'desc_alpha' and 'distance'</b>",
+						"in": "query",
+						"name": "sortOptionKey",
+						"required": true,
+						"schema": {
+							"$ref": "#/components/schemas/_SORT_OPTIONS_KEYS"
+						}
+					},
+					{
+						"description": "The page number of the result set to return.",
+						"in": "query",
+						"name": "pageNumber",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"description": "Size of the page of results to return. (Note: Maximum value is system capped, so less results maybe returned than requested)",
+						"in": "query",
+						"name": "pageSize",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"description": "Filter the results based on the FHIS/FHRS Rating of the establishment (See Ratings for more details). Valid options for <b>FHRS</b> are <b>'0', '1', '2', '3', '4' and '5'</b> and for <b>FHIS<b> are <b>'Pass', 'ImprovementRequired', 'AwaitingPublication', 'AwatingInspection' and 'Exempt'</b>",
+						"in": "query",
+						"name": "ratingKey",
+						"required": false,
+						"schema": {}
+					},
+					{
+						"description": "Terms to search for within the Business address and postcode of the establishments.",
+						"in": "query",
+						"name": "name",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "Terms to search for within the Business name of the establishments.",
+						"in": "query",
+						"name": "address",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "The longitude of the centre point of a spatial query.",
+						"in": "query",
+						"name": "longitude",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "The latitude of the centre point of a spatial query.",
+						"in": "query",
+						"name": "latitude",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "The max distance limit in miles from the centre of the spatial query. Note: This value maybe capped by the system to limit the size of the result set",
+						"in": "query",
+						"name": "maxDistanceLimit",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "Filter the results based on the Business Type of the establishment (See BusinessTypes for more details).",
+						"in": "query",
+						"name": "businessTypeId",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "Filter the results based on the Local Authority of the establishment (See Authorities for more details).",
+						"in": "query",
+						"name": "localAuthorityId",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "Filter the results based on the Country of the establishment (See Countries for more details).",
+						"in": "query",
+						"name": "countryId",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/v1/foodalerts/id": {
+			"get": {
+				"operationId": "GetListAlerts",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"anyOf": [
+										{
+											"$ref": "#/components/schemas/IListAlertGetFullResponse"
+										},
+										{
+											"$ref": "#/components/schemas/IListAlertGetDefaultResponse"
+										}
+									]
+								},
+								"examples": {
+									"Example 1": {
+										"value": {
+											"meta": {
+												"publisher": "string",
+												"licence": "string",
+												"documentation": "string",
+												"version": "string",
+												"comment": "string",
+												"hasFormat": [
+													"string"
+												],
+												"limit": 0
+											},
+											"items": [
+												{
+													"id": "string",
+													"smStext": "string",
+													"actionTaken": "string",
+													"alertURL": "string",
+													"consumerAdvice": "string",
+													"created": "2021-09-13T13:22:53.195Z",
+													"description": "string",
+													"modified": "2021-09-13T13:22:53.195Z",
+													"notation": "string",
+													"problem": [
+														{
+															"id": "string",
+															"allergen": [
+																{
+																	"id": "string",
+																	"altLabel": "string",
+																	"label": "string",
+																	"narrower": [
+																		"string"
+																	],
+																	"notation": "string",
+																	"riskStatement": "string",
+																	"broader": "string"
+																}
+															],
+															"riskStatement": "string"
+														}
+													],
+													"productDetails": [
+														{
+															"id": "string",
+															"batchDescription": [
+																{
+																	"id": "string",
+																	"batchCode": "string",
+																	"bestBeforeDate": "2021-09-13T13:22:53.195Z",
+																	"bestBeforeDescription": "string",
+																	"useByDescription": "string",
+																	"lotNumber": "string"
+																}
+															],
+															"packSizeDescription": "string",
+															"productName": "string"
+														}
+													],
+													"relatedMedia": [
+														"string"
+													],
+													"reportingBusiness": {
+														"commonName": "string"
+													},
+													"shortTitle": "string",
+													"shortURL": "string",
+													"status": {
+														"id": "string",
+														"label": "Published"
+													},
+													"title": "string",
+													"twitterText": "string",
+													"type": [
+														"string"
+													],
+													"otherBusiness": [
+														{
+															"commonName": "string"
+														}
+													]
+												}
+											]
+										}
+									},
+									"Example 2": {
+										"value": {
+											"meta": {
+												"publisher": "string",
+												"licence": "string",
+												"documentation": "string",
+												"version": "string",
+												"comment": "string",
+												"hasFormat": [
+													"string"
+												],
+												"limit": 0
+											},
+											"items": [
+												{
+													"id": "string",
+													"actionTaken": "string",
+													"alertURL": "string",
+													"consumerAdvice": "string",
+													"created": "2021-09-13T13:22:53.195Z",
+													"description": "string",
+													"modified": "2021-09-13T13:22:53.195Z",
+													"notation": "string",
+													"problem": [
+														{
+															"id": "string",
+															"allergen": [
+																{
+																	"id": "string",
+																	"altLabel": "string",
+																	"label": "string",
+																	"narrower": [
+																		"string"
+																	],
+																	"notation": "string",
+																	"riskStatement": "string",
+																	"broader": "string"
+																}
+															],
+															"riskStatement": "string"
+														}
+													],
+													"productDetails": [
+														{
+															"id": "string",
+															"batchDescription": [
+																{
+																	"id": "string",
+																	"batchCode": "string",
+																	"bestBeforeDate": "2021-09-13T13:22:53.195Z",
+																	"bestBeforeDescription": "string",
+																	"useByDescription": "string",
+																	"lotNumber": "string"
+																}
+															],
+															"packSizeDescription": "string",
+															"productName": "string"
+														}
+													],
+													"relatedMedia": [
+														"string"
+													],
+													"reportingBusiness": {
+														"commonName": "string"
+													},
+													"shortTitle": "string",
+													"shortURL": "string",
+													"status": {
+														"id": "string",
+														"label": "Published"
+													},
+													"title": "string",
+													"twitterText": "string",
+													"type": [
+														"string"
+													],
+													"otherBusiness": [
+														{
+															"commonName": "string"
+														}
+													]
+												}
+											]
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"summary": "List Alerts <b>|</b> List alerts changed since some point in time <b>|</b> Search for alerts matching some search term",
+				"tags": [
+					"Food Alerts"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Must be greater than <b>0</b>",
+						"in": "query",
+						"name": "_limit",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "Must be <b>\"default\"</b> or <b>\"full\"</b>",
+						"in": "query",
+						"name": "_view",
+						"required": false,
+						"schema": {
+							"$ref": "#/components/schemas/_VIEW"
+						}
+					},
+					{
+						"description": "List alerts changed since some point in time <b>(Example: 2018-01-29T16:25:08+00:00)</b>",
+						"in": "query",
+						"name": "since",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "Search for alerts matching some search term <b>(Example: tesco)</b>",
+						"in": "query",
+						"name": "search",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/v1/foodalerts/id/{id}": {
+			"get": {
+				"operationId": "GetIndividualAlert",
+				"responses": {
+					"200": {
+						"description": "IFoodAlertIndividualAlertGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IFoodAlertIndividualAlertGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "An individual alert",
+				"tags": [
+					"Food Alerts"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Example = FSA-AA-01-2018",
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/v1/foodalerts/def/allergens": {
+			"get": {
+				"operationId": "GetListCodeAllergens",
+				"responses": {
+					"200": {
+						"description": "IFoodAlertListCodeAllergensGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IFoodAlertListCodeAllergensGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "List of codes for allergens",
+				"tags": [
+					"Food Alerts"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Example = label",
+						"in": "query",
+						"name": "_sort",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/v1/foodalerts/def/pathogen-risk": {
+			"get": {
+				"operationId": "GetListCodePathogenRisk",
+				"responses": {
+					"200": {
+						"description": "IFoodAlertPathogenRiskGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IFoodAlertPathogenRiskGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "List of codes for pathogen risks",
+				"tags": [
+					"Food Alerts"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Example = label",
+						"in": "query",
+						"name": "_sort",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/v1/foodalerts/def/hazards": {
+			"get": {
+				"operationId": "GetListHazardsCatagories",
+				"responses": {
+					"200": {
+						"description": "IFoodAlertHazardCatagoryGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IFoodAlertHazardCatagoryGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "List of hazard categories",
+				"tags": [
+					"Food Alerts"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Example = label",
+						"in": "query",
+						"name": "_sort",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/v1/foodalerts/def/reasons": {
+			"get": {
+				"operationId": "GetListReasonsAlert",
+				"responses": {
+					"200": {
+						"description": "IFoodAlertReasonAlertGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IFoodAlertReasonAlertGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "List of reasons for alert",
+				"tags": [
+					"Food Alerts"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Example = label",
+						"in": "query",
+						"name": "_sort",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/v1/ratings": {
+			"get": {
+				"operationId": "GetRating",
+				"responses": {
+					"200": {
+						"description": "IRatingGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IRatingGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns details of all ratings, results are unbound.",
+				"tags": [
+					"Ratings"
+				],
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/v1/ratingoperators": {
+			"get": {
+				"operationId": "GetRatingOperators",
+				"responses": {
+					"200": {
+						"description": "IRatingOperatorGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IRatingOperatorGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns details of all RatingOperators, results are unbound.",
+				"tags": [
+					"RatingOperators"
+				],
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/v1/regions/{pageNumber}/{pageSize}": {
+			"get": {
+				"operationId": "GetRegionDetailPagination",
+				"responses": {
+					"200": {
+						"description": "IRegionDetailPaginationGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IRegionDetailPaginationGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns details of all regions, page parameters allow for page number and size specification.",
+				"tags": [
+					"Regions"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Must be greater than <b>0</b>",
+						"in": "path",
+						"name": "pageNumber",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "Must be greater than <b>0</b>",
+						"in": "path",
+						"name": "pageSize",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/v1/regions/basic/{pageNumber}/{pageSize}": {
+			"get": {
+				"operationId": "GetRegionDetailBasicPagination",
+				"responses": {
+					"200": {
+						"description": "IRegionDetailBasicPaginationGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IRegionDetailBasicPaginationGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns a basic list of regions, details can be retrieved by calling regions{id}, page parameters allow for page number and size specification.",
+				"tags": [
+					"Regions"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Must be greater than <b>0</b>",
+						"in": "path",
+						"name": "pageNumber",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "Must be greater than <b>0</b>",
+						"in": "path",
+						"name": "pageSize",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/v1/regions/basic": {
+			"get": {
+				"operationId": "GetRegionDetailBasic",
+				"responses": {
+					"200": {
+						"description": "IRegionDetailBasicGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IRegionDetailBasicGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns a basic list of regions, details can be retrieved by calling regions{id}.",
+				"tags": [
+					"Regions"
+				],
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/v1/regions": {
+			"get": {
+				"operationId": "GetRegionDetail",
+				"responses": {
+					"200": {
+						"description": "IRegionDetailGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IRegionDetailGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns details of all regions, results are unbound.",
+				"tags": [
+					"Regions"
+				],
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/v1/regions/{id}": {
+			"get": {
+				"operationId": "GetRegionDetailById",
+				"responses": {
+					"200": {
+						"description": "IRegionDetailByIdGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IRegionDetailByIdGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns details of a single region, selected by Id.",
+				"tags": [
+					"Regions"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			}
+		},
+		"/v1/schemetypes": {
+			"get": {
+				"operationId": "GetSchemeTypes",
+				"responses": {
+					"200": {
+						"description": "ISchemeTypesGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ISchemeTypesGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns details of all SchemeTypes, results are unbound.",
+				"tags": [
+					"SchemeTypes"
+				],
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/v1/scoredescriptors": {
+			"get": {
+				"operationId": "GetScoreDescriptor",
+				"responses": {
+					"200": {
+						"description": "IScoreDescriptorGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IScoreDescriptorGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns details of all scoreDescriptor, results are unbound",
+				"tags": [
+					"ScoreDescriptors"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "No documentation available.",
+						"in": "query",
+						"name": "establishmentId",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			}
+		},
+		"/v1/sortoptions": {
+			"get": {
+				"operationId": "GetSchemeTypes",
+				"responses": {
+					"200": {
+						"description": "ISortOptionsGetResponse",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ISortOptionsGetResponse"
+								}
+							}
+						}
+					}
+				},
+				"summary": "Returns details of all SortOptions, results are unbound.",
+				"tags": [
+					"SortOptions"
+				],
+				"security": [],
+				"parameters": []
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	],
+	"tags": [
+		{
+			"name": "Food Alerts",
+			"description": "Food Alert APIS"
+		},
+		{
+			"name": "Food Hygiene Rating",
+			"description": "Food Hygiene Rating API"
+		},
+		{
+			"name": "Regions"
+		},
+		{
+			"name": "Authorities"
+		},
+		{
+			"name": "BusinessTypes"
+		},
+		{
+			"name": "Countries"
+		},
+		{
+			"name": "Establishments"
+		},
+		{
+			"name": "SchemeTypes"
+		},
+		{
+			"name": "SortOptions"
+		},
+		{
+			"name": "ScoreDescriptors"
+		},
+		{
+			"name": "Ratings"
+		},
+		{
+			"name": "RatingOperators"
+		}
+	]
+}

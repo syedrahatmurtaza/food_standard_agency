@@ -1,0 +1,52 @@
+{
+  "entryFile": "src/index.ts",
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "controllerPathGlobs": ["./src/controllers/**/*.ts"],
+  "spec": {
+    "name": "Food Standards Agency API",
+    "version": "v1",
+    "contact": {
+      "name": "Oraclo LTD",
+      "email": "admin@orcalo.co.uk",
+      "url": "https://orcalo.co.uk/"
+    },
+    "outputDirectory": "public/swagger/v1/",
+    "routesDir": "temp",
+    "specVersion": 3,
+    "securityDefinitions": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "name": "authorization",
+        "in": "header",
+        "bearerFormat": "JWT"
+      },
+      "apiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-API-KEY"
+      }
+    },
+    "tags": [
+      { "name": "Food Alerts", "description": "Food Alert APIS" },
+      {
+        "name": "Food Hygiene Rating",
+        "description": "Food Hygiene Rating API"
+      },
+      { "name": "Regions" },
+      { "name": "Authorities" },
+      { "name": "BusinessTypes" },
+      { "name": "Countries" },
+      { "name": "Establishments" },
+      { "name": "SchemeTypes" },
+      { "name": "SortOptions" },
+      { "name": "ScoreDescriptors" },
+      { "name": "Ratings" },
+      { "name": "RatingOperators" }
+    ]
+  },
+  "routes": {
+    "basePath": "/",
+    "routesDir": "./src/routes"
+  }
+}
